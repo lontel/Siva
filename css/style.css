@@ -133,6 +133,9 @@ span {
     margin-left: 3px;
 }
 
-label{
+/* label{
+    font-size: x-small;
+} */
+small{
     font-size: x-small;
 }

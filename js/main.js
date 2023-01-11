@@ -32,8 +32,35 @@ handleSecondInput.forEach(input=>{
         })
     })
 
+let discountCode = document.querySelector('#discountCode')
+
+if(discountCode){
+    let data1 = localStorage.getItem('firstChoice')
+    let data2 = localStorage.getItem('secondChoice')
+    let data = `${data1}${data2} `
+    console.log(data)
+    discountCode.append(data)
+}
+
+let minutes = document.querySelector('#minutes')
+let seconds = document.querySelector('#seconds')
 
 
-        
-        
+window.onload = updateClock
 
+let totalTime = 1200
+
+function updateClock() {
+    let min = Math.trunc(totalTime / 60)
+    let sec = totalTime - min * 60
+    
+    min > 9 ? document.getElementById('minutes').innerHTML = min : document.getElementById('minutes').innerHTML =`0${min}`
+    sec > 9 ? document.getElementById('seconds').innerHTML = sec : document.getElementById('seconds').innerHTML =`0${sec}`
+
+    if(totalTime==0){
+        console.log('Final')
+    }else{
+        totalTime-=1
+    setTimeout("updateClock()",1000)
+  }
+}
