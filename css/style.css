@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-html,
-body {
+html, body {
     height: 100vh;
 }
 
@@ -76,7 +75,7 @@ body {
     color: #ffff;
 }
 
-p {
+.section-one :nth-child(1) {
     color: gray;
 }
 
@@ -99,7 +98,9 @@ footer {
 
 .form-check {
     width: 100%;
-    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: 8px 3px;
     border-radius: 4px;
     background: rgba(255, 255, 255, .09);
@@ -108,7 +109,11 @@ footer {
     height: 30px;
 }
 
-span {
+.form-check :first-child {
+    margin: 6px;
+}
+
+.section-one :first-child {
     background: #5dc2bd;
     color: #2c5e5b;
     padding: 3px 7px;
@@ -133,9 +138,17 @@ span {
     margin-left: 3px;
 }
 
-/* label{
+small {
     font-size: x-small;
-} */
-small{
-    font-size: x-small;
+}
+
+.option-container :hover {
+    cursor: pointer;
+    background-color: rgba(128,128,128,.09);
+    transition-duration: .5s;
+}
+
+.option-container-selected {
+    background: #C92F58;
+    transition-duration: .5s;
 }
