@@ -58,7 +58,7 @@ function updateClock() {
     sec > 9 ? document.getElementById('seconds').innerHTML = sec : document.getElementById('seconds').innerHTML =`0${sec}`
 
     if(totalTime==0){
-        console.log('Final')
+        console.log('Final!')
     }else{
         totalTime-=1
     setTimeout("updateClock()",1000)
