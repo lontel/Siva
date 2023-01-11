@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../../public/background.jpg');
+    background-size: cover;
+}
+
+.logo {
+    margin-left: 17%;
+    margin-top: 30px;
+    padding: 30px 0 15px;
+    width: 145px;
+    height: 35px;
+    background: transparent url("../../public/logo-siroko.png") no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        margin-left: 17%;
+        margin-top: 30px;
+        width: 145px;
+        height: 35px;
+        background: transparent url("../../public/logo-siroko2.png") no-repeat;
+    }
+
+    footer {
+        background: #000;
+        padding: 15px 15%;
+        font-family: "Inconsolata";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: #bbb;
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+.section-one {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 17%;
+}
+
+#form {
+    margin-left: 17%;
+    margin-right: 17%;
+    background-color: rgb(49 21 41);
+}
+
+.in-form-div {
+    padding: 15px;
+    background: #311429;
+    border-radius: 3px;
+    overflow: hidden;
+    height: calc(100% - 140px);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.white {
+    color: #ffff;
+}
+
+p {
+    color: gray;
+}
+
+p a {
+    text-decoration: underline;
+}
+
+footer {
+    background: #000;
+    padding: 15px 15%;
+    font-family: "Inconsolata";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #bbb;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+.form-check {
+    width: 100%;
+    cursor: pointer;
+    margin: 8px 3px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .09);
+    color: #fff;
+    transition-duration: .5s;
+    height: 30px;
+}
+
+span {
+    background: #5dc2bd;
+    color: #2c5e5b;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: Inter, sans-serif;
+    font-size: 9px;
+    line-height: 11px;
+    margin-bottom: 10px;
+}
+
+#firstBtn {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #339B95;
+    height: 30px;
+    border-radius: 4px;
+    margin-left: 3px;
+}
+
+label{
+    font-size: x-small;
+}
