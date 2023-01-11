@@ -1,46 +1,39 @@
+const buttonOne = document.querySelector('#firstBtn')
+if(buttonOne){
+    buttonOne.onclick = function () {
+        localStorage.setItem('firstChoice', firstChoice)
+    }
+}
 
-const button = document.querySelector('#firstBtn');
-button.onclick = function () {
-        alert('butttttonnnn')
-    };
+const buttonTwo = document.querySelector('#secondBtn')
+if(buttonTwo){
+    buttonTwo.onclick = function () {
+        localStorage.setItem('secondChoice', secondChoice)
+    }
+}
 
+const handleFirstInput =  document.querySelectorAll('.firstChoice')
 
-const handleFirstInput =  document.querySelectorAll('.firstChoice');
-
-
-let firstChoice = []
+let firstChoice = ''
 handleFirstInput.forEach(input=>{
     input.addEventListener('click', (event) => {
-        if(firstChoice.length === 0){
-            firstChoice.push(event.path[0].value)
+        firstChoice = event.path[0].value
         console.log(firstChoice)
-        }else{
-            firstChoice = []
-            firstChoice.push(event.path[0].value)
-        console.log(firstChoice)
-        }
     })
 })
 
-const handleSecondInput =  document.querySelectorAll('.secondChoice');
+const handleSecondInput =  document.querySelectorAll('.secondChoice')
 
-
-let secondChoice = []
+let secondChoice = ''
 handleSecondInput.forEach(input=>{
     input.addEventListener('click', (event) => {
-        if(secondChoice.length === 0){
-            secondChoice.push(event.path[0].value)
-        console.log(secondChoice)
-        }else{
-            secondChoice = []
-            secondChoice.push(event.path[0].value)
-        console.log(secondChoice)
-        }
+            secondChoice = event.path[0].value
+            console.log(secondChoice)
+        })
     })
-})
 
 
 
-
-
+        
+        
 
