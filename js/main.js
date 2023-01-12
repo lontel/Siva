@@ -1,12 +1,21 @@
+// como el primer elemento es preseleccionado guardamos su valor al pricipio
+if (!localStorage.getItem('firstChoice')) {
+    localStorage.setItem('firstChoice', '2A16')
+}
+
+if (!localStorage.getItem('secondChoice')) {
+    localStorage.setItem('secondChoice', '1')
+}
+
 const buttonOne = document.querySelector('#firstBtn')
-if(buttonOne){
+if (buttonOne) {
     buttonOne.onclick = function () {
         localStorage.setItem('firstChoice', firstChoice)
     }
 }
 
 const buttonTwo = document.querySelector('#secondBtn')
-if(buttonTwo){
+if (buttonTwo) {
     buttonTwo.onclick = function () {
         localStorage.setItem('secondChoice', secondChoice)
     }
@@ -15,30 +24,36 @@ if(buttonTwo){
 const handleFirstInput =  document.querySelectorAll('.firstChoice')
 
 let firstChoice = ''
-handleFirstInput.forEach(input=>{
+handleFirstInput.forEach(input => {
     input.addEventListener('click', (event) => {
+        document.getElementsByClassName('option-container-selected')[0]?.classList
+        .remove('option-container-selected')
+        event.target.parentElement.parentElement.classList.add('option-container-selected')
         firstChoice = event.path[0].value
-        console.log(firstChoice)
     })
 })
 
 const handleSecondInput =  document.querySelectorAll('.secondChoice')
 
 let secondChoice = ''
-handleSecondInput.forEach(input=>{
+handleSecondInput.forEach(input => {
     input.addEventListener('click', (event) => {
-            secondChoice = event.path[0].value
-            console.log(secondChoice)
-        })
+        document.getElementsByClassName('option-container-selected')[0]?.classList
+        .remove('option-container-selected')
+        event.target.parentElement.parentElement.classList.add('option-container-selected')
+        secondChoice = event.path[0].value
     })
+})
 
-let discountCode = document.querySelector('#discountCode')
+let discountCode = document.querySelector('#discount-code')
 
-if(discountCode){
+if (discountCode) {
     let data1 = localStorage.getItem('firstChoice')
     let data2 = localStorage.getItem('secondChoice')
-    let data = `${data1}${data2} `
-    console.log(data)
+    let data = `${data1}${data2}`
+    discountCode.style.fontSize = "x-large";
+    discountCode.style.color = "black";
+    discountCode.style.paddingLeft = "10px";
     discountCode.append(data)
 }
 
@@ -54,8 +69,13 @@ function updateClock() {
     let min = Math.trunc(totalTime / 60)
     let sec = totalTime - min * 60
     
-    min > 9 ? document.getElementById('minutes').innerHTML = min : document.getElementById('minutes').innerHTML =`0${min}`
-    sec > 9 ? document.getElementById('seconds').innerHTML = sec : document.getElementById('seconds').innerHTML =`0${sec}`
+    if(minutes){
+        min > 9 ? minutes.innerHTML = min : minutes.innerHTML =`0${min}`
+    }
+
+    if(seconds){
+        sec > 9 ? seconds.innerHTML = sec : seconds.innerHTML =`0${sec}`
+    }
 
     if(totalTime==0){
         console.log('Final!')

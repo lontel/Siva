@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-html,
-body {
+html, body {
     height: 100vh;
 }
 
@@ -14,7 +13,7 @@ body {
 }
 
 body {
-    background: url('../../public/background.jpg');
+    background: url('../public/background.jpg');
     background-size: cover;
 }
 
@@ -24,7 +23,7 @@ body {
     padding: 30px 0 15px;
     width: 145px;
     height: 35px;
-    background: transparent url("../../public/logo-siroko.png") no-repeat;
+    background: transparent url("../public/logo-siroko.png") no-repeat;
 }
 
 @media only screen and (max-width: 600px) {
@@ -33,7 +32,7 @@ body {
         margin-top: 30px;
         width: 145px;
         height: 35px;
-        background: transparent url("../../public/logo-siroko2.png") no-repeat;
+        background: transparent url("../public/logo-siroko2.png") no-repeat;
     }
 
     footer {
@@ -54,6 +53,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 17%;
+    margin-right: 17%;
 }
 
 #form {
@@ -70,13 +70,22 @@ body {
     height: calc(100% - 140px);
     margin-bottom: 30px;
     margin-top: 10px;
+
+    /* background: #311429;
+    border-radius: 3px; */
+    /* display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 15em;
+    padding: 15px;
+    align-items: center; */
 }
 
 .white {
     color: #ffff;
 }
 
-p {
+.section-one :nth-child(1) {
     color: gray;
 }
 
@@ -85,8 +94,11 @@ p a {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
     background: #000;
-    padding: 15px 15%;
+    padding: 25px 17%;
     font-family: "Inconsolata";
     font-style: normal;
     font-weight: 400;
@@ -95,20 +107,28 @@ footer {
     width: 100%;
     bottom: 0;
     position: fixed;
+    gap: 10px;
+    height: 7%;
 }
 
 .form-check {
     width: 100%;
-    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: 8px 3px;
     border-radius: 4px;
     background: rgba(255, 255, 255, .09);
     color: #fff;
     transition-duration: .5s;
-    height: 30px;
+    height: 2rem;
 }
 
-span {
+.form-check :first-child {
+    margin: 6px;
+}
+
+.section-one :first-child {
     background: #5dc2bd;
     color: #2c5e5b;
     padding: 3px 7px;
@@ -120,7 +140,7 @@ span {
     margin-bottom: 10px;
 }
 
-#firstBtn {
+.btn {
     font-family: Inter;
     font-style: normal;
     font-weight: 700;
@@ -133,9 +153,40 @@ span {
     margin-left: 3px;
 }
 
-/* label{
+small {
     font-size: x-small;
-} */
-small{
-    font-size: x-small;
+}
+
+.option-container :hover {
+    cursor: pointer;
+    background-color: rgba(128,128,128,.09);
+    transition-duration: .5s;
+}
+
+.option-container-selected {
+    background: #C92F58;
+    transition-duration: .5s;
+}
+
+#discount-code {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(270deg, #FFFFFF 0%, #BDBDBD 100%);
+    border-radius: 2px;
+    height: 3rem;
+    margin-bottom: 20px;
+}
+
+#firstBtn {
+    height: 2rem;
+}
+
+.space {
+    margin-bottom: 20px;
+}
+
+.countdown {
+    background-color: #2C0C23;
 }
