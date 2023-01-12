@@ -1,10 +1,10 @@
 // como el primer elemento es preseleccionado guardamos su valor al pricipio
 if (!localStorage.getItem('firstChoice')) {
-    localStorage.setItem('firstChoice', '2A16')
+    localStorage.setItem('firstChoice', '2016')
 }
 
 if (!localStorage.getItem('secondChoice')) {
-    localStorage.setItem('secondChoice', '1')
+    localStorage.setItem('secondChoice', 'ÍNVJ')
 }
 
 const buttonOne = document.querySelector('#firstBtn')
@@ -47,10 +47,19 @@ handleSecondInput.forEach(input => {
 
 let discountCode = document.querySelector('#discount-code')
 
+function sumOfLastTwo (str) {
+  let lastTwoArr = str.split('').slice(2)
+  return lastTwoArr.reduce((acc, prev) => {
+    return Number(acc) + Number(prev)
+  }, 0) 
+}
+
 if (discountCode) {
     let data1 = localStorage.getItem('firstChoice')
+    let sumOfTwo = sumOfLastTwo(data1)
+    console.log('data: ',data1)
     let data2 = localStorage.getItem('secondChoice')
-    let data = `${data1}${data2}`
+    let data = `${sumOfTwo}${data2}`
     discountCode.style.fontSize = "x-large";
     discountCode.style.color = "black";
     discountCode.style.paddingLeft = "10px";
