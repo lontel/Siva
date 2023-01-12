@@ -172,11 +172,12 @@ small {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 98%;
     background: linear-gradient(270deg, #FFFFFF 0%, #BDBDBD 100%);
     border-radius: 2px;
     height: 3rem;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 #firstBtn {
@@ -206,3 +207,7 @@ small {
     color: white;
 }
 
+#copy-btn {
+    width: 5rem;
+    height: 2rem;
+}

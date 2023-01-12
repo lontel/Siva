@@ -1,4 +1,4 @@
-// como el primer elemento es preseleccionado guardamos su valor al pricipio
+// default value
 if (!localStorage.getItem('firstChoice')) {
     localStorage.setItem('firstChoice', '2016')
 }
@@ -54,24 +54,29 @@ function sumOfLastTwo (str) {
   }, 0) 
 }
 
+let copyBtn = document.querySelector('#copy-btn')
+let data1 = localStorage.getItem('firstChoice')
+let sumOfTwo = sumOfLastTwo(data1)
+let data2 = localStorage.getItem('secondChoice')
+let data = `${sumOfTwo}${data2}`
+
 if (discountCode) {
-    let data1 = localStorage.getItem('firstChoice')
-    let sumOfTwo = sumOfLastTwo(data1)
-    console.log('data: ',data1)
-    let data2 = localStorage.getItem('secondChoice')
-    let data = `${sumOfTwo}${data2}`
     discountCode.style.fontSize = "x-large";
     discountCode.style.color = "black";
     discountCode.style.paddingLeft = "10px";
-    discountCode.append(data)
+
+    copyBtn.before(data)
 }
+
+copyBtn?.addEventListener('click', () => {
+    navigator.clipboard.writeText(data)
+})
 
 let minutes = document.querySelector('#minutes')
 let seconds = document.querySelector('#seconds')
 
-
 window.onload = updateClock
-let totalTime = 2
+let totalTime = 1200
 
 function updateClock() {
     let min = Math.trunc(totalTime / 60)
