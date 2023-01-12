@@ -62,7 +62,7 @@ let seconds = document.querySelector('#seconds')
 
 
 window.onload = updateClock
-let totalTime = 1200
+let totalTime = 2
 
 function updateClock() {
     let min = Math.trunc(totalTime / 60)

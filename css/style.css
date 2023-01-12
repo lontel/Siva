@@ -194,10 +194,15 @@ small {
 .countdown-finished {
     background-color: #ff0000;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .countdown a {
     display: none;
+}
+
+#clock {
+    width: 30px;
+    color: white;
 }
 
