@@ -190,3 +190,14 @@ small {
 .countdown {
     background-color: #2C0C23;
 }
+
+.countdown-finished {
+    background-color: #ff0000;
+    display: flex;
+    justify-content: space-around;
+}
+
+.countdown a {
+    display: none;
+}
+

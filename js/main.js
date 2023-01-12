@@ -62,24 +62,30 @@ let seconds = document.querySelector('#seconds')
 
 
 window.onload = updateClock
-
 let totalTime = 1200
 
 function updateClock() {
     let min = Math.trunc(totalTime / 60)
     let sec = totalTime - min * 60
     
-    if(minutes){
+    if (minutes) {
         min > 9 ? minutes.innerHTML = min : minutes.innerHTML =`0${min}`
     }
 
-    if(seconds){
+    if (seconds) {
         sec > 9 ? seconds.innerHTML = sec : seconds.innerHTML =`0${sec}`
     }
 
-    if(totalTime==0){
-        console.log('Final!')
-    }else{
+    if (totalTime === 0 ) {
+        minutes.innerHTML = 'Código caducado.'
+        let finalScreen = document.querySelector('#final-screen')
+        finalScreen.classList.remove('countdown')
+        finalScreen.classList.add('countdown-finished')
+        const button = document.createElement('button')
+        button.type = 'button'; 
+        seconds.innerText = ''
+        document.querySelector('#colon').innerText = ''
+    }else {
         totalTime-=1
     setTimeout("updateClock()",1000)
   }
