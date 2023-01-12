@@ -38,16 +38,22 @@ const handleSecondInput =  document.querySelectorAll('.secondChoice')
 let secondChoice = ''
 handleSecondInput.forEach(input => {
     input.addEventListener('click', (event) => {
-            secondChoice = event.path[0].value
-        })
+        document.getElementsByClassName('option-container-selected')[0]?.classList
+        .remove('option-container-selected')
+        event.target.parentElement.parentElement.classList.add('option-container-selected')
+        secondChoice = event.path[0].value
     })
+})
 
-let discountCode = document.querySelector('#discountCode')
+let discountCode = document.querySelector('#discount-code')
 
 if (discountCode) {
     let data1 = localStorage.getItem('firstChoice')
     let data2 = localStorage.getItem('secondChoice')
     let data = `${data1}${data2}`
+    discountCode.style.fontSize = "x-large";
+    discountCode.style.color = "black";
+    discountCode.style.paddingLeft = "10px";
     discountCode.append(data)
 }
 
