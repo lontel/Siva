@@ -29,7 +29,7 @@ handleFirstInput.forEach(input => {
         document.getElementsByClassName('option-container-selected')[0]?.classList
         .remove('option-container-selected')
         event.target.parentElement.parentElement.classList.add('option-container-selected')
-        firstChoice = event.path[0].value
+        firstChoice = event.target.attributes[3].value
     })
 })
 
@@ -41,7 +41,7 @@ handleSecondInput.forEach(input => {
         document.getElementsByClassName('option-container-selected')[0]?.classList
         .remove('option-container-selected')
         event.target.parentElement.parentElement.classList.add('option-container-selected')
-        secondChoice = event.path[0].value
+        secondChoice = event.target.attributes[4].nodeValue
     })
 })
 
@@ -83,11 +83,11 @@ function updateClock() {
     let sec = totalTime - min * 60
     
     if (minutes) {
-        min > 9 ? minutes.innerHTML = min : minutes.innerHTML =`0${min}`
+        min > 9 ? minutes.innerHTML = min : minutes.innerHTML = `0${min}`
     }
 
     if (seconds) {
-        sec > 9 ? seconds.innerHTML = sec : seconds.innerHTML =`0${sec}`
+        sec > 9 ? seconds.innerHTML = sec : seconds.innerHTML = `0${sec}`
     }
 
     if (totalTime === 0 ) {
@@ -101,6 +101,6 @@ function updateClock() {
         document.querySelector('#colon').innerText = ''
     }else {
         totalTime-=1
-    setTimeout("updateClock()",1000)
+    setTimeout('updateClock()',1000)
   }
 }
