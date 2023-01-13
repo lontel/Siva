@@ -41,7 +41,9 @@ handleSecondInput.forEach(input => {
         document.getElementsByClassName('option-container-selected')[0]?.classList
         .remove('option-container-selected')
         event.target.parentElement.parentElement.classList.add('option-container-selected')
-        secondChoice = event.target.attributes[4].nodeValue
+        let string = event.target.attributes[4].nodeValue
+        secondChoice = string.split(' ').join('').toUpperCase().split('')
+        .filter((char) => char !== 'A').slice(-4).join('')
     })
 })
 
